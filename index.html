@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+#btn{
+  text-align: center;
+ 
+}
+button{
+  background-color: black;
+  color: aliceblue;
+  width: 200px;
+  height: 50px;
+  font-size: 32px;
+}
+#img {
+      display: block;
+      margin: 0 auto;
+}
+button:hover{
+  background-color: aliceblue;
+  color: black;
+  cursor: pointer;
+}
+
+</style>
+<body>
+
+  <img src="image-png.png" alt="" id="img"><br>
+  <div id="btn">
+  <button onclick="prevslide()">prev</button>
+  <button onclick="nextslide()">next</button>
+  </div>
+  <script>
+
+    let image = ["image-png.png","shadow.png","flame.png"]
+    let index = 0
+    let img = document.getElementById("img")
+    
+
+    function nextslide(){
+      index++
+      let currentindex = index % image.length
+      img.src = image[currentindex]
+    }
+
+    function prevslide(){
+      index--
+      let currentindex = index % image.length
+      img.src = image[currentindex]
+    }
+  </script>
+</body>
+</html>
